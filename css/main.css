@@ -1,0 +1,157 @@
+/* Body */
+body {
+	background: #F5F5F5;
+}
+
+/* Link */
+.mail a {
+    text-decoration:none;
+}
+
+.mail a:link,.mail a:visited {
+    color:#555;
+    text-decoration:none;
+}
+
+.mail a:hover {
+    color:#0099cc;
+    text-decoration:none;
+}
+
+/* Add a dark background color with a little bit see-through */ 
+.navbar {
+	margin-bottom: 0;
+	background-color: #2980b9;
+	border: 0;
+}
+
+.navbar .navbar-brand {
+    color: #fff !important;   
+    padding: 12px;
+}
+
+/* Add a gray color to all navbar links */
+.navbar li a { 
+	color: #d5d5d5  !important;
+}
+
+/* On hover, the links will turn white */
+.navbar-nav li a:hover {
+	color: #fff !important;
+}
+
+/* The active link */
+.navbar-nav li.active a {
+	color: #fff !important;
+	background-color:#3498db !important;
+}
+
+/* Remove border color from the collapsible button */
+.navbar-default .navbar-toggle {
+	border-color: transparent;
+}
+
+/* Dropdown */
+.open .dropdown-toggle {
+	color: #fff ;
+	background-color: #3498db !important;
+}
+
+/* Dropdown links */
+.dropdown-menu li a {
+	color: #000 !important;
+}
+
+/* On hover, the links will turn white */
+.dropdown-menu li a:hover {
+	color: #000 !important;
+}
+
+/* Homepage Post */
+.homepage {
+	border: 1px solid #DEDEDE;
+	background-color: #fff !important;
+	margin: 30px 0 30px 0;
+	padding: 25px;
+}
+
+/* Styling Panels */
+.panel {
+	margin-top: 15px;
+	border: 1px solid #2980b9; 
+	border-radius:0;
+	transition: box-shadow 0.5s;
+}
+
+.panel:hover {
+	box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+}
+
+.panel-body .btn:hover {
+	border: 1px solid #2980b9;
+	background-color: #fff !important;
+	color: #2980b9;
+}
+
+.panel-heading {
+	color: #fff !important;
+    font-weight:bold;
+	background-color: #2980b9 !important;
+	border-bottom: 1px solid transparent;
+	border-top-left-radius: 0px;
+	border-top-right-radius: 0px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
+}
+
+.panel-footer {
+	background-color: #fff !important;
+}
+
+.panel-footer h3 {
+	font-size: 32px;
+}
+
+.panel-footer h4 {
+	color: #aaa;
+	font-size: 14px;
+}
+
+.panel-body .btn {	
+	background-color: #2980b9;
+	color: #fff;
+}
+
+.panel-body .btn-warning {
+	color: #fff;
+	background-color: #f0ad4e;
+	border-color: #eea236;
+}
+
+.panel-body .btn-warning:focus, .panel-body .btn-warning.focus {
+	color: #fff;
+	background-color: #ec971f;
+	border-color: #985f0d;
+}
+
+.panel-body .btn-warning:hover {
+	color: #ec971f;
+	background-color: #ec971f;
+	border-color: #d58512;
+}
+
+/* Add a dark background color to the footer */
+footer {
+	background-color: #2c3e50;
+	color: #f5f5f5;
+	padding: 32px; 
+}
+
+footer a {
+	color: #f5f5f5;
+}
+
+footer a:hover {
+	color: #bdc3c7;
+	text-decoration: underline;
+}
