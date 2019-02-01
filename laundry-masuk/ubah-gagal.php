@@ -6,7 +6,9 @@
     if(!isset($_SESSION["login"])) {
         header("Location: ../login");
         exit;
-    }        
+    }
+
+    $id = $_GET["id"];
 
     include ('../view/header.php');  
 ?>
@@ -20,8 +22,8 @@
                     <div class="text-center">
                         <h2>Maaf</h2>
                         <p>
-                            Terjadi kesalahan, data tidak terhapus :[
-                            <br /><a href="../laundry-masuk">Kembali</a>
+                            Terjadi kesalahan, data tidak dapat diperharui :[
+                            <br /><a href="ubah.php?id=<?= $id; ?>">Kembali</a>
                         </p>
                     </div>
                 </div>

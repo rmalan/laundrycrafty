@@ -20,8 +20,8 @@
                     <div class="text-center">
                         <h2>Maaf</h2>
                         <p>
-                            Terjadi kesalahan, data tidak terhapus :[
-                            <br /><a href="../laundry-masuk">Kembali</a>
+                            Terjadi kesalahan, data tidak tersimpan :[
+                            <br /><a href="tambah.php">Kembali</a>
                         </p>
                     </div>
                 </div>

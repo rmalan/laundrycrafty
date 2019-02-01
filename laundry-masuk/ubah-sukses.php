@@ -1,6 +1,6 @@
 <?php
     session_start();
-    
+
     require 'functions.php';
 
     if(!isset($_SESSION["login"])) {
@@ -18,9 +18,9 @@
             <div class="col-lg-12">
                 <div class="homepage">
                     <div class="text-center">
-                        <h2>Maaf</h2>
+                        <h2>Selamat</h2>
                         <p>
-                            Terjadi kesalahan, data tidak terhapus :[
+                            Data telah berhasil diperharui :]
                             <br /><a href="../laundry-masuk">Kembali</a>
                         </p>
                     </div>
