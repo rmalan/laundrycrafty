@@ -2,7 +2,6 @@
     $hostname  = "localhost";
     $username  = "root";
     $password  = "";
-    $dbname  = "db_laundry";
-    $db = mysql_connect($hostname, $username, $password) or die ('Koneksi Gagal! ');
-    mysql_select_db($dbname);
+    $dbname  = "crud_laundry";
+    $conn = mysqli_connect($hostname, $username, $password, $dbname);    
 ?>
