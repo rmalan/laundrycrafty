@@ -20,7 +20,7 @@
                     <div class="text-center">
                         <h2>Selamat</h2>
                         <p>
-                            Data telah berhasil dihapus :]
+                            Data telah berhasil disimpan :]
                             <br /><a href="../laundry-keluar">Kembali</a>
                         </p>
                     </div>

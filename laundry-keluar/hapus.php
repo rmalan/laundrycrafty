@@ -1,22 +1,19 @@
-<?php
-if(isset($_GET['id'])){
-	include('../koneksi.php');
+<?php 
+    session_start();
 
-	$id = $_GET['id'];
-	$cek = mysql_query("SELECT id_laundry FROM tb_laundry_keluar WHERE id_laundry='$id'") or die(mysql_error());
+    require 'functions.php';
 
-	if(mysql_num_rows($cek) == 0){
-		echo '<script>window.history.back()</script>';
-	}else{		
-		$del = mysql_query("DELETE FROM tb_laundry_keluar WHERE id_laundry='$id'");
-		
-		if($del){
-            header('location:../laundry-keluar/hapus-sukses.php');
-		}else{
-            header('location:../laundry-keluar/hapus-gagal.php');
-		}
-	}
-}else{
-	echo '<script>window.history.back()</script>';
-}
+    if(!isset($_SESSION["login"])) {
+        header("Location: ../index.php");
+        exit;
+    }
+
+    $id = $_GET["id"];
+    
+    if(hapus($id) > 0) {
+        header("Location: hapus-sukses.php");
+    }
+    else {
+        header("Location: hapus-gagal.php");
+    }    
 ?>
