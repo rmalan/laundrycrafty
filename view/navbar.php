@@ -8,7 +8,7 @@
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <span class="glyphicon glyphicon-user"></span>
                     <b>
-                        <?php echo $username;?>
+                        <?php echo $_SESSION["user"];?>
                     </b>
                     <span class="caret"></span>
                 </a>
