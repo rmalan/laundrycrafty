@@ -3,6 +3,19 @@
 
     require '../koneksi.php';
 
+    if(isset($_COOKIE["id"]) && isset($_COOKIE["key"])) {
+        $id = $_COOKIE["id"];
+        $key = $_COOKIE["key"];
+        
+        $result = mysqli_query($conn, "SELECT username FROM user WHERE id = $id");
+        $row = mysqli_fetch_assoc($result);
+        
+        if($key === hash("sha256", $row["username"])) {
+            $_SESSION["login"] = true;
+            $_SESSION["user"] = $row["username"];
+        }
+    }
+
     if(isset($_SESSION["login"])) {
         header("Location: ../index.php");
         exit;
@@ -11,21 +24,26 @@
     if(isset($_POST["login"])) {
         $username = $_POST["username"];
         $password = $_POST["password"];
-
         $result = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username'");
-
-        if(mysqli_num_rows($result) === 1) {
+        
+        if(mysqli_num_rows($result) === 1) {		
             $row = mysqli_fetch_assoc($result);
-            if(password_verify($password, $row["password"])) {
+            if(password_verify($password, $row["password"])) {			
                 $_SESSION["login"] = true;
                 $_SESSION["user"] = $row["username"];
+                
+                if(isset($_POST["remember"])) {				
+                    setcookie("id", $row["id"], time()+1800);
+                    setcookie("key", hash("sha256", $row["username"]), time()+1800);
+                }
+                
                 header("Location: ../index.php");
                 exit;
             }
         }
-
+        
         $error = true;
-    }    
+    }
 ?>
 
 <!doctype html>
@@ -54,15 +72,15 @@
             <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
 
             <div class="checkbox mb-3">
-                <label>
-                <input type="checkbox" value="remember-me"> Remember Me
+                <label for="remember">
+                    <input type="checkbox" name="remember" id="remember"> Remember Me
                 </label>
             </div>
             <button class="btn btn-lg btn-primary btn-block" type="submit" name="login">Login</button>
             <?php if(isset($error)) : ?>
                 <script>alert('Username atau password salah!')</script>
             <?php endif; ?>
-            <p class="mt-5 mb-3 text-muted">&copy; 2019</p>
+            <p class="mt-5 mb-3 text-muted">&copy; 2017</p>
         </form>
     </body>
 </html>
