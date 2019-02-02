@@ -1,60 +1,30 @@
 <?php
-session_start();
-if(!isset($_SESSION['id_user'])) {
-    header('location:../login'); 
-} else { 
-    $username = $_SESSION['id_user']; 
-}
-?>
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header("Location: login");
+    }
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Tentang | Laundry Crafty</title>
-	    <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="/css/bootstrap.min.css">
-        <link rel="stylesheet" href="/css/main.css">      
-        <link href="/css/sidebar.css" rel="stylesheet">         
-        <script src="/js/jquery-1.12.3.min.js"></script>
-        <script src="/js/bootstrap.min.js"></script>
-    </head>
-    <body>
-        <?php include('../view/navbar.php'); ?>
-        <div id="wrapper">            
-            <?php include('../view/sidebar.php'); ?>
-            <!-- Page Content -->
-            <div id="page-content-wrapper">
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="homepage">
-                                <div class="text-center">
-                                    <h2>Tentang</h2>
-                                    <p>
-                                        Laundry Crafty merupakan sebuah sistem informasi sederhana berbasis web. Laundry Crafty digunakan untuk melakukan pendataan terhadap laundry masuk dan laundry keluar. Laundry Crafty dibangun menggunakan bahasa php, javascript, dan framework bootstrap.                                        
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
+    $username = $_SESSION["user"];
+
+    include('../view/header.php');
+?>
+<!-- Page Content -->
+<div id="page-content-wrapper">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="homepage">
+                    <div class="text-center">
+                        <h2>Tentang</h2>
+                        <p>
+                            Laundry Crafty merupakan sebuah sistem informasi sederhana berbasis web. Laundry Crafty digunakan untuk melakukan pendataan terhadap laundry masuk dan laundry keluar. Laundry Crafty dibangun menggunakan bahasa php, javascript, dan framework bootstrap.                                        
+                        </p>
                     </div>
                 </div>
             </div>
-            <footer class="text-center">
-                <p>
-                    Copyright 2017 <span class="glyphicon glyphicon-copyright-mark"></span> Laundry Crafty All Rights Reserved<br />
-                    Made with <span class="glyphicon glyphicon-heart"></span>  Powered by <a href="http://www.unib.ac.id" re="nofollow" target="_blank">Universitas Bengkulu</a>
-                </p>
-                </p>
-            </footer>
-            <!-- /#page-content-wrapper -->
         </div>
-        <!-- /#wrapper -->               
-        <script>
-            $("#menu-toggle").click(function(e) {
-                e.preventDefault();
-                $("#wrapper").toggleClass("toggled");
-            });
-        </script>
-    </body>
-</html>
+    </div>
+</div>
+<?php
+    include('../view/footer.php');
+?>
