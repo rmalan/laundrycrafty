@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 02, 2019 at 07:19 AM
+-- Generation Time: Feb 02, 2019 at 09:17 AM
 -- Server version: 5.7.25-0ubuntu0.18.10.2
 -- PHP Version: 7.2.14-1+ubuntu18.10.1+deb.sury.org+1
 
@@ -21,26 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `crud_laundry`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `kategori`
---
-
-CREATE TABLE `kategori` (
-  `id` int(11) NOT NULL,
-  `nama` varchar(25) NOT NULL,
-  `tarif` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `kategori`
---
-
-INSERT INTO `kategori` (`id`, `nama`, `tarif`) VALUES
-(1, 'Expert', 8000),
-(2, 'Normal', 4000);
 
 -- --------------------------------------------------------
 
@@ -93,12 +73,6 @@ INSERT INTO `user` (`id`, `username`, `password`) VALUES
 --
 
 --
--- Indexes for table `kategori`
---
-ALTER TABLE `kategori`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `transaksi`
 --
 ALTER TABLE `transaksi`
@@ -113,12 +87,6 @@ ALTER TABLE `user`
 --
 -- AUTO_INCREMENT for dumped tables
 --
-
---
--- AUTO_INCREMENT for table `kategori`
---
-ALTER TABLE `kategori`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `transaksi`
