@@ -57,7 +57,7 @@
                                     <td><?= $exit["harga_satuan"] ?></td>
                                     <td><?= $exit["harga_total"] ?></td>
                                     <?php
-                                        $dimabil = $exit['diambil'];
+                                        $diambil = $exit['diambil'];
                                         $dateDiambil = date_create("$diambil");
                                     ?>
                                     <td><?= date_format($dateDiambil,"d/m/Y"); ?></td>
