@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    require '../functions.php';
+    require '../koneksi.php';
 
     if(isset($_SESSION["login"])) {
         header("Location: ../index.php");
