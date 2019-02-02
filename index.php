@@ -1,28 +1,70 @@
 <?php
-session_start();
-if(!isset($_SESSION['id_user'])) {
-    header('location:../login'); 
-} else { 
-    $username = $_SESSION['id_user']; 
-}
+    session_start();
+    if(!isset($_SESSION["login"])) {
+        header("Location: login");
+    }
+
+    $username = $_SESSION["user"];
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
+<!doctype html>
+    <html lang="en">
+    <head>        
         <title>Laundry Crafty</title>
 	    <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/main.css">      
-        <link href="css/sidebar.css" rel="stylesheet">         
-        <script src="js/jquery-1.12.3.min.js"></script>
-        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/sidebar.css">        
     </head>
-    <body>
-        <?php include('view/navbar.php'); ?>
+    <body> 
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#menu-toggle" id="menu-toggle">Laundry Crafty</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            <span class="glyphicon glyphicon-user"></span>
+                            <b>
+                                <?php echo $username;?>
+                            </b>
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="login/logout.php">Log Out <span class="glyphicon glyphicon-off"></span></a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Wrapper -->
         <div id="wrapper">            
-            <?php include('view/sidebar.php'); ?>
+
+            <!-- Sidebar -->
+            <div id="sidebar-wrapper">
+                <ul class="sidebar-nav">
+                    <li>
+                        <a href="index.php"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="laundry-masuk"><span class="glyphicon glyphicon-list-alt"></span> Laundry Masuk</a>
+                    </li>
+                    <li>
+                        <a href="laundry-keluar"><span class="glyphicon glyphicon-shopping-cart"></span> Laundry Keluar</a>
+                    </li>
+                    <li>
+                        <a href="kategori"><span class="glyphicon glyphicon-menu-hamburger"></span> Kategori</a>
+                    </li>
+                    <li>
+                        <a href="tentang"><span class="glyphicon glyphicon-th"></span> Tentang Laundry Crafty</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- /#sidebar-wrapper -->
+
             <!-- Page Content -->
             <div id="page-content-wrapper">
                 <div class="container-fluid">
@@ -40,22 +82,21 @@ if(!isset($_SESSION['id_user'])) {
                         </div>
                     </div>
                 </div>
-            </div>
-            <footer class="text-center">
-                <p>
-                    Copyright 2017 <span class="glyphicon glyphicon-copyright-mark"></span> Laundry Crafty All Rights Reserved<br />
-                    Made with <span class="glyphicon glyphicon-heart"></span>  Powered by <a href="http://www.unib.ac.id" re="nofollow" target="_blank">Universitas Bengkulu</a>
-                </p>
-                </p>
-            </footer>
+            </div>            
             <!-- /#page-content-wrapper -->
+
         </div>
         <!-- /#wrapper -->               
+
         <script>
             $("#menu-toggle").click(function(e) {
                 e.preventDefault();
                 $("#wrapper").toggleClass("toggled");
             });
         </script>
+        ?>
+
+        <script src="js/jquery-1.12.3.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
     </body>
 </html>
