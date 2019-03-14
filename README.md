@@ -5,5 +5,5 @@ Laundry Crafty digunakan untuk melakukan pendataan terhadap laundry masuk dan la
 
 # Demo
 Username	: admin<br />
-Password	: 12345<br />
+Password	: admin<br />
 URL Web		: https://laundrycrafty.azurewebsites.net
